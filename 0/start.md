@@ -93,7 +93,7 @@ line     #* E I O op                           fetch          ext  return  opera
 
 事实上，所有的 PHP 语句都会被编译为 `OPCODE` ，然后交由 Zend 引擎一条条执行，PHP 7.0.12 版本总共定义了 168 类 `OPCODE`：
 ```
-Zend/zend_vm_`opcode`s.h
+Zend/zend_vm_opcodes.h
 
 #define ZEND_NOP                               0
 #define ZEND_ADD                               1
@@ -146,7 +146,7 @@ Zend/zend_vm_`opcode`s.h
 
 Zend/zend_vm_execute.h #40435
 
-static ZEND_`OPCODE`_HANDLER_RET ZEND_FASTCALL ZEND_ECHO_SPEC_TMPVAR_HANDLER(ZEND_OPCODE_HANDLER_ARGS)
+static ZEND_OPCODE_HANDLER_RET ZEND_FASTCALL ZEND_ECHO_SPEC_TMPVAR_HANDLER(ZEND_OPCODE_HANDLER_ARGS)
 {
 	USE_OPLINE
 	zend_free_op free_op1;
